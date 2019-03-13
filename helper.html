@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="helper.css">
+</head>
+<body>
+
+<div id="default" class="persona">Using Persona: <span id="currentPersonaName"></span> in {} seconds</div>
+
+<div id="persona" class="modal">
+    <div class="persona modal-content">
+        <span class="closer close" data-modal="persona">&times;</span>
+        <ul>
+            <li>Persona 1</li>
+            <li>Persona 2</li>
+            <li>+ Add Persona</li>
+        </ul>
+    </div>
+</div>
+
+<div id="gridcard" class="modal">
+    <div class="modal-content">
+        <span class="closer close" data-modal="gridcard">&times;</span>
+        <p>Paste gridcard contents below:</p>
+        <textarea
+                placeholder="Personal Gridcard\n1\n2\n3\n4\n5\nA\nTT\nL3\nRX\nLX\nYG\nB\nXW\n5Z\n7W\n3F\nVR\nSerial# 221561\nC\nGK\nAP\nCF\nFX"></textarea>
+        <button class="submit" data-modal="gridcard">Submit Gridcard</button>
+    </div>
+
+</div>
+
+<button class="opener" data-modal="persona">Show Persona Modal</button>
+
+<button class="opener" data-modal="gridcard">Show Gridcard Modal</button>
+
+<script>
+    'use strict';
+
+    let currentPersona = window.localStorage.getItem("currentPersona");
+    if (currentPersona == null) {
+        console.log("No Persona Loaded")
+    }
+
+    Array.from(document.getElementsByClassName("closer")).forEach(function (closer) {
+        closer.onclick = function () {
+            document.getElementById(this.getAttribute("data-modal")).style.display = "none";
+        }
+    });
+
+    Array.from(document.getElementsByClassName("opener")).forEach(function (opener) {
+        opener.onclick = function () {
+            document.getElementById(this.getAttribute("data-modal")).style.display = "block";
+        }
+    });
+
+</script>
+</body>
+</html>

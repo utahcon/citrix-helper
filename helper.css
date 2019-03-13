@@ -1,0 +1,49 @@
+#default.persona {
+    background-color: #666;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    padding: 5px;
+    left: 25%;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .4)
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 50%
+}
+
+.modal-content p {
+    color: #000
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: 700
+}
+
+.close:focus, .close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer
+}
